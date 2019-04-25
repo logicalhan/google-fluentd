@@ -28,6 +28,8 @@ RUN apt-get update \
     # image cleanup.
     && /opt/google-fluentd/embedded/bin/gem uninstall fluentd -ax --force \
     && /opt/google-fluentd/embedded/bin/gem install fluentd -v 1.4.2 \
+    && /opt/google-fluentd/embedded/bin/gem uninstall fluent-plugin-prometheus -ax --force \
+    && /opt/google-fluentd/embedded/bin/gem install fluent-plugin-prometheus -v 1.3.0 \
     # ==> INSTALL_ADDITIONAL_GEMS_HERE_IF_NEEDED <==
     # Clean up to reduce image size.
     && apt-get purge -y \
